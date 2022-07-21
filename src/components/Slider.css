@@ -1,0 +1,24 @@
+.wrapper {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 0.8s;
+  animation-name: fade;
+  animation-duration: 0.8s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}

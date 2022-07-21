@@ -1,8 +1,10 @@
-import { React, useState } from 'react';
+import { React } from 'react';
 import { Badge } from '@mui/material';
 import { Search, ShoppingCartOutlined } from '@mui/icons-material';
 
 function Navbar() {
+  const navBtnstyle = 'text=[14px] cursor-pointer ml-[25px]';
+
   return (
     <div
       className="navbar h-[60px] shadow-md
@@ -21,14 +23,14 @@ function Navbar() {
           <div className="logo font-bold text-lg">Summer Kings</div>
         </div>
 
-        <div>
-          <div className="right flex flex-1 items-center justify-end">
-            Register
+        <div className="right flex flex-1 items-center justify-end">
+          <div className={navBtnstyle}>Register</div>
+          <div className={navBtnstyle}>Sign In</div>
+          <div className={navBtnstyle}>
+            <Badge badgeContent={2} color="primary">
+              <ShoppingCartOutlined />
+            </Badge>
           </div>
-          <div>Sign In</div>
-          <Badge badgeContent={2} color="primary">
-            <ShoppingCartOutlined />
-          </Badge>
         </div>
       </div>
     </div>
