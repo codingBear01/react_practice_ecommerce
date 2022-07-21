@@ -1,5 +1,6 @@
 import { React, useState } from 'react';
-import { Search } from '@material-ui/icons';
+import { Badge } from '@mui/material';
+import { Search, ShoppingCartOutlined } from '@mui/icons-material';
 
 function Navbar() {
   return (
@@ -10,14 +11,25 @@ function Navbar() {
       <div className="wrapper pl-[20px] pr-[20px] pt-[10px] pb-[10px] flex justify-between items-center">
         <div className="left flex flex-1 items-center">
           <div className="language cursor-pointer text-[16px]">En</div>
-          <div class="searchInput">
-            <input className="input" type="text" />
-            <Search />
+          <div className="searchInput flex border-[2px] border-solid border-lightgrey rounded-md items-center ml-[10px] p-[5px] focus-within:border-[#8a4af3] transition-all">
+            <input className="input outline-none" type="text" />
+            <Search className=" cursor-pointer" style={{ fontSize: '16px' }} />
           </div>
         </div>
 
-        <div>2</div>
-        <div>3</div>
+        <div className="center flex-1 text-center ">
+          <div className="logo font-bold text-lg">Summer Kings</div>
+        </div>
+
+        <div>
+          <div className="right flex flex-1 items-center justify-end">
+            Register
+          </div>
+          <div>Sign In</div>
+          <Badge badgeContent={2} color="primary">
+            <ShoppingCartOutlined />
+          </Badge>
+        </div>
       </div>
     </div>
   );
