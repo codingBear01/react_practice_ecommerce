@@ -1,5 +1,5 @@
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@mui/icons-material';
-import { React, useState } from 'react';
+import { React, useState, useCallback } from 'react';
 import { ApiSlides } from './../apifolder/SliderApi';
 
 import './Slider.css';
@@ -9,21 +9,20 @@ function Slider() {
   const [activeSlide, setActiveSlide] = useState(0);
 
   // slide function 통합
-  const nextSlide = () => {
-    if (activeSlide === slides.length - 1) {
-      setActiveSlide(0);
-    } else {
-      setActiveSlide(activeSlide + 1);
-    }
-  };
-
-  const prevSlide = () => {
-    if (activeSlide === 0) {
-      setActiveSlide(slides.length - 1);
-    } else {
-      setActiveSlide(activeSlide - 1);
-    }
-  };
+  const handleSlide = useCallback(
+    (direction) => {
+      if (direction === 'left') {
+        activeSlide === slides.length - 1
+          ? setActiveSlide(0)
+          : setActiveSlide(activeSlide + 1);
+      } else {
+        activeSlide === 0
+          ? setActiveSlide(slides.length - 1)
+          : setActiveSlide(activeSlide - 1);
+      }
+    },
+    [activeSlide, slides.length]
+  );
 
   const arrowDivStyle =
     'rounded-full bg-grey flex justify-center items-center shadow-sm hover:cursor-pointer';
@@ -31,7 +30,10 @@ function Slider() {
   return (
     <div className="parentDiv h-[540px] bg-white flex items-center justify-between">
       <div className={arrowDivStyle}>
-        <ArrowLeftOutlined style={{ fontSize: '50px' }} onClick={prevSlide} />
+        <ArrowLeftOutlined
+          style={{ fontSize: '50px' }}
+          onClick={() => handleSlide('left')}
+        />
       </div>
       {slides.map((slide, index) => {
         if (index === activeSlide) {
@@ -59,7 +61,10 @@ function Slider() {
         }
       })}
       <div className={arrowDivStyle}>
-        <ArrowRightOutlined style={{ fontSize: '50px' }} onClick={nextSlide} />
+        <ArrowRightOutlined
+          style={{ fontSize: '50px' }}
+          onClick={() => handleSlide('right')}
+        />
       </div>
     </div>
   );
