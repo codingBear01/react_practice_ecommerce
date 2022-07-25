@@ -28,7 +28,7 @@ function Slider() {
     'rounded-full bg-grey flex justify-center items-center shadow-sm hover:cursor-pointer';
 
   return (
-    <div className="parentDiv h-[540px] bg-white flex items-center justify-between">
+    <div className="parentDiv h-[540px] bg-white flex items-center justify-between mobile:hidden">
       <div className={arrowDivStyle}>
         <ArrowLeftOutlined
           style={{ fontSize: '50px' }}

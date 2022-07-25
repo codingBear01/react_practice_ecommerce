@@ -15,7 +15,7 @@ function CategoryPage() {
       <div className="flex flex-col p-5">
         <h1 className="text-[30px]">Men's Clothes</h1>
         <div className="flex items-center justify-between mt-3">
-          <div className="flex">
+          <div className="flex mobile:flex-col">
             <p>Filter by</p>
             <select className={selectStyle}>
               <option selected disabled>
@@ -25,7 +25,7 @@ function CategoryPage() {
               <option>Medium</option>
               <option>Large</option>
             </select>
-            <select className={selectStyle}>
+            <select className={`${selectStyle} mobile:mt-3`}>
               <option selected disabled>
                 Color
               </option>

@@ -13,7 +13,7 @@ function ProductPage() {
     <div>
       <Announce />
       <Navbar />
-      <div className="flex justify-center">
+      <div className="flex justify-center mobile:flex-col mobile:mt-3 mobile:p-3">
         <div className="flex flex-1 items-center justify-center">
           <img
             className="w-[80%] h-[80%] rounded-lg shadow-lg hover:scale-[1.1] ease-in duration-150"
@@ -21,9 +21,11 @@ function ProductPage() {
             alt="product_img"
           />
         </div>
-        <div className="flex flex-col flex-[1.3] items-start justify-items-start mt-10">
-          <h1 className="title text-[40px]">Black T-Shirt</h1>
-          <p className="mt-4 pr-[4rem] text-justify">
+        <div className="flex flex-col flex-[1.3] items-start justify-items-start mt-10 mobile:items-center">
+          <h1 className="title text-[40px] mobile:text-[30px]">
+            Black T-Shirt
+          </h1>
+          <p className="mt-4 pr-[4rem] text-justify mobile:pr-0">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
             dignissimos rem quasi, magnam mollitia culpa ea voluptate possimus
             error ullam! Architecto nisi eius eum laborum at corrupti
